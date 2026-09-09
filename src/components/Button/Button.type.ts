@@ -1,5 +1,6 @@
 
 
 export interface ButtonProps{
-    label:string
+    label:string,
+    type:"submit" | "reset" | "button" | undefined
 }

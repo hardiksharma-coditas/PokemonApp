@@ -1,11 +1,13 @@
 import type { InputProps } from "./Input.type"
 
 
-const Input = ({placeholder}:InputProps) =>
+const Input = ({type,placeholder, ...props}:InputProps) =>
 {
     return (
      < input 
+       type={type}
        placeholder={placeholder}
+       {...props}
      />
     )
 }

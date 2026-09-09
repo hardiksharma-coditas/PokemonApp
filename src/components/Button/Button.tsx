@@ -1,11 +1,11 @@
 import type { ButtonProps } from "./Button.type"
 
 
-const Button = ({label}:ButtonProps) => {
+const Button = ({label, type}:ButtonProps) => {
 
     return (
         <>
-        <button>{label}</button>
+        <button type={type}>{label}</button>
         </>
     )
 }
