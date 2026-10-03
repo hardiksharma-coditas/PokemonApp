@@ -1,9 +1,23 @@
+import { useEffect } from "react";
+import { getUsers } from "../../Services/mockdata";
 
 
 const User = () => {
+
     return (
         <>
-        <h1>This is the user page</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Caught</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
         </>
     )
 }

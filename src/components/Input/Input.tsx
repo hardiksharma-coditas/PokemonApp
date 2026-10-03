@@ -1,5 +1,5 @@
 import type { InputProps } from "./Input.type"
-
+import styles from '../Input/Input.module.scss'
 
 const Input = ({type,placeholder, ...props}:InputProps) =>
 {
@@ -8,6 +8,7 @@ const Input = ({type,placeholder, ...props}:InputProps) =>
        type={type}
        placeholder={placeholder}
        {...props}
+       className={styles.input}
      />
     )
 }

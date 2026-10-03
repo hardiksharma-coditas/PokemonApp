@@ -1,0 +1,39 @@
+$border-color: rgb(185, 183, 183);
+
+.loginPage {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.imageSection {
+    // background-color: aquamarine;
+}
+
+.formContainer {
+    // background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $border-color;
+    box-shadow: 0px 0px 4px 0px $border-color;
+}
+
+.form {
+    padding: 4rem 2rem;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0px 0px 10px 0px $border-color;
+}
+
+.formHeading {
+    margin-bottom: 1rem;
+}
+
+.errorBox {
+    color: red;
+    font-size: 12px;
+}

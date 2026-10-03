@@ -1,13 +1,13 @@
 import { NavLink, Outlet } from "react-router";
-
+import styles from "../Sidebar/Sidebar.module.scss"
 
 const Sidebar = () => {
     return (
         <>
-        <div className="sidebar">
-            <nav className="navbar">
-                <NavLink to="/admin">Users</NavLink>
-                <NavLink to="pokemons">Pokemons</NavLink>
+        <div className={styles.sidebar}>
+            <nav className={styles.navbar}>
+                <NavLink className={styles.navlink} to="/admin">Users</NavLink>
+                <NavLink className={styles.navlink} to="pokemons">Pokemons</NavLink>
             </nav>
         </div>
         </>
