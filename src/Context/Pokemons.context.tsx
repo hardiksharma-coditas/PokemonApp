@@ -41,17 +41,21 @@ export const usersReducer = (userState:UserState[],userAction:UserAction): UserS
 
     switch (userAction.action){
      case "ADD_USER" : {
-        return [...userList,
+        return [...userState,
         {
             id:nextId++,
             userName:userAction.name,
-            password:'123456',
+            password:userAction.password,
             pokemons:[]
         }]
      }
+
+     case "DELETE_USER" : {
+        return userState.filter( item => item.id !== userAction.id)
+     }
     }
 
-    return userList;
+    return userState;
 }
 
 let nextId = 4;

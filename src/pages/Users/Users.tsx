@@ -1,19 +1,38 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Button from "../../components/Button/Button";
 import { getUsers } from "../../Services/mockdata";
 import styles from "../Users/Users.module.scss"
-import { useUsersContext } from "../../Context/Pokemons.context";
+import { useUserDispatchContext, useUsersContext } from "../../Context/Pokemons.context";
+import AddUserForm from "../../components/AddUser/AddUser";
 
 const Users = () => {
 
     // const users = getUsers()
 
+    const [showAddForm, setShowAddForm] = useState(false);
+
     const users = useUsersContext();
+    const userDispatch = useUserDispatchContext();
+
+    const addUser = () => {
+        // console.log("User Added!!!")
+        setShowAddForm(true);
+    }
+
+    const deleteUser = (id:number) => {
+      userDispatch?.({
+        action : "DELETE_USER",
+        id : id
+      })
+      console.log("Delete User")
+    }
 
     return (
         <>
         <div className={styles.usersContainer}>
-        <Button label="+ Add User"/>
+        <Button label="+ Add User" action={addUser}/>
+
+        { showAddForm && <AddUserForm setShowAddForm={setShowAddForm} />}
         <table>
             <thead>
                 <tr>
@@ -30,7 +49,7 @@ const Users = () => {
                        <td>{user.pokemons.length}</td>
                        <td>
                         <Button  label="Edit"/>
-                        <Button label="Delete"/>
+                        <Button label="Delete" action={() => deleteUser(user.id)}/>
                        </td>
                      </tr>
                 }
